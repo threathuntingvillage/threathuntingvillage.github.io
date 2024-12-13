@@ -1,0 +1,145 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Main Section */
+.neumorphism-card-big {
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 0px;
+    text-align: center;
+}
+
+.title {
+    font-size: 4rem;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #848484;
+    margin-bottom: 30px;
+}
+
+/* Timeline Styles */
+.timeline-wrapper {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #909090;
+    transform: translateX(-50%);
+    z-index: 1; /* Keep the line behind the event content */
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.timeline li .event {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.timeline li:nth-child(odd) .event {
+    justify-content: flex-end;
+}
+
+/* Hexagon */
+.hexagon {
+    width: 20px;
+    height: 20px;
+    background: red;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Event Content */
+.event-content {
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgba(90, 90, 90, 0.148);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    z-index: 2; /* Make sure the event content is above the line */
+}
+
+.event-content .date {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.event-content .description {
+    font-size: 1.5rem;
+    color: #848484;
+}
+
+/* Positioning */
+.timeline li:nth-child(odd) .event-content {
+    margin-right: 60px;
+    text-align: right;
+}
+
+.timeline li:nth-child(even) .event-content {
+    margin-left: 60px;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    /* Remove the line and hexagons in mobile view */
+    .timeline::before {
+        display: none; /* Hides the vertical line on mobile */
+    }
+
+    .hexagon {
+        display: none; /* Hides the hexagons on mobile */
+    }
+
+    /* Adjust event content layout */
+    .date, .description {
+        margin: 10px auto;
+        text-align: center; /* Aligns text to center */
+        z-index: 2; /* Keep the event content above the line */
+    }
+
+    /* Ensure proper alignment in mobile view */
+    .timeline li:nth-child(odd) .event-content,
+    .timeline li:nth-child(even) .event-content {
+        margin: 10px auto;
+    }
+}

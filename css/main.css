@@ -1,0 +1,474 @@
+@charset "UTF-8";
+
+/* General font size adjustment */
+/* Prevent horizontal scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.778;
+  color: #ffffff;
+  background: url('../images/background.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  height: 150vh;
+  background-size: contain;
+  background: url('../images/IMG_8321.PNG') no-repeat center center/cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .hero {
+  position: relative;
+  height: 100vh; /* Occupies full viewport height */
+  overflow: hidden;
+  background: url('../images/IMG_8321.PNG') no-repeat center / cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px; /* Add some padding for content spacing */
+  box-sizing: border-box;
+}
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Center content vertically */
+  }
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure the header is above all other elements */
+}
+
+/* Header Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: auto;
+  max-width: 80%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+.header-logo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+}
+
+
+/* Navigation Menu */
+.header-nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-main-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-main-nav li {
+  margin: 0;
+}
+
+.header-main-nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav-wrap {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: #1a1918;
+    top: 50px;
+    right: 10px;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+
+  .header-nav-wrap.show {
+    display: flex;
+  }
+
+  .header-main-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-main-nav a {
+    padding: 10px 20px;
+    font-size: 1.8rem;
+  }
+
+  .header-logo img {
+    max-width: 120px;
+  }
+}
+
+
+
+/* Home Content */
+
+
+.home-content {
+  z-index: 4;
+  height: 500px; /* Adjust height for larger screens */
+  display: flex;
+  flex-direction: column; /* Stack text and image vertically */
+  padding-top: 10rem; /* Adjust padding for mobile */
+  width: 100%;
+  
+  justify-content: center; /* Center content */
+  max-height: 150vh;
+  align-items: center; /* Align to the left */
+}
+
+.home-content h1 {
+  font-family: "Chivo", sans-serif;
+  font-weight: 600;
+  font-size: 7.2rem;
+  line-height: 1.222;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3.2rem;
+  position: relative;
+}
+
+
+
+.home-content h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 1.667;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 2rem;
+  width: 85%;
+}
+
+.home-content__main {
+  position: relative;
+  padding-bottom: 10rem;
+}
+
+.home-content__left {
+  position: relative;
+  top: -10px;
+  display: flex; /* Flexbox to center text */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center; /* Ensure text is centered */
+}
+
+.home-content__left h4{
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+.home-content__left p{
+  text-align: center;
+  padding-left: 40px; /* Ensure text is centered */
+  padding-right: 40px;
+  box-sizing: border-box;
+  max-width: 1000px;
+}
+
+.home-content__left p1{
+  text-align: center;
+  padding-left: 40px; /* Ensure text is centered */
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+/* Adjust layout for Mobile Devices */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column; /* Stack text and image vertically */
+    height: auto; /* Remove fixed height for mobile */
+  }
+
+  .home-content__left {
+    width: 100%; /* Full width for text */
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Ensure text is centered horizontally */
+  }
+
+  .home-content__left p,h4{
+    width: 100%; /* Full width for text */
+    top: 0;
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center vertically */
+    box-sizing: border-box;
+    align-items: center; /* Ensure text is centered horizontally */
+  }
+
+
+
+  .home-content__right img {
+    width: 100%; /* Ensure the image scales properly */
+    object-fit: contain; /* Ensure the image is contained without cropping */
+  }
+}
+
+/* Countdown Styles */
+ul#countdown {
+  display: flex;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  width: 45%;
+  justify-content: center; /* Align countdown items to the left */
+  margin-top: 1.5rem; /* Add some space between the heading and the countdown */
+  list-style: none; /* Remove default list styling (dots) */
+  z-index: 2; /* Place above the overlay */
+}
+
+ul#countdown li {
+  margin: 0 10px; /* Space between each countdown item */
+  text-align: center;
+  
+  background-color: #c10404; /* Transparent background with slight darkening */
+  border-radius: 5px;
+  width: calc(25% - 20px); /* Adjust width for large screens */
+}
+
+ul#countdown .number {
+  color: #ffffff;
+  font-size: 3vw; /* Responsive font size */
+  display: block;
+}
+
+ul#countdown .label {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  color: #fff;
+  margin-bottom: 0; /* Ensure no extra space under the label */
+}
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    padding-top: 2rem;
+    align-items: center; /* Align content to the left */
+  }
+
+  ul#countdown {
+    width: 100%; /* Make countdown container full width */
+    padding-left: 10px; /* Add padding from the left side */
+    justify-content: center; /* Align countdown items to the left */
+    margin-top: 2rem;
+  }
+
+  ul#countdown li {
+    width: calc(50% - 20px); /* Each countdown item takes 50% of the width on mobile */
+    margin: 10px 0; /* Adjust spacing between items */
+  }
+}
+
+@media (max-width: 480px) {
+  ul#countdown li {
+    width: calc(100% - 20px); /* Each countdown item takes full width on very small screens */
+  }
+
+  ul#countdown .number {
+    font-size: 10vw; /* Even larger font size on smaller screens */
+  }
+  
+}
+
+/* Footer styles*/
+.unique-footer {
+  color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  background: rgba(0, 0, 0, 0.051);
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h4 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-form button {
+  background: #656565;
+  border: none;
+  padding: 10px;
+  color: #1a1918;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  
+}
+
+.footer-form button:hover {
+  background: #8d8d8d;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-column {
+      text-align: center;
+  }
+}
